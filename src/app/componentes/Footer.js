@@ -5,7 +5,7 @@ export default async function Footer() {
       <footer>
         <div className={Styles.footer}>
             <Image className={Styles.img} src="" width="50" height="50"/>
-            <a  className={Styles.a}>jesus</a>
+            <a  className={Styles.link}>Shop Main</a>
         </div>
 
       </footer>
