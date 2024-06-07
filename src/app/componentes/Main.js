@@ -12,7 +12,7 @@ const data = await response.json();
             {data.map((product) => (
             <div className={styles.card}>
                   <p className={styles.title}>{product.title}</p>
-                    <Image src={product.image} width={150} height={150}/>
+                    <Image src={product.image} width={150} height={200} className={styles.image}/>
                     <p className={styles.price}>R$: {product.price}</p>
                     <p className={styles.description}>{product.description}</p>
                     <button className={styles.button}>adicionar no Carrinho</button>
