@@ -1,6 +1,5 @@
 import Footer from "./componentes/Footer"
 import Header from "./componentes/Header"
-import Home from "./page"
 
 export const metadata = {
   title: "Meu Shop.com",
@@ -13,7 +12,6 @@ export default function RootLayout({ children }) {
       <body>
         <Header/>
         <br/>
-        <Home/>
         {children}
         <br/>
         <Footer/>
