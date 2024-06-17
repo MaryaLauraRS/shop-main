@@ -2,8 +2,10 @@
 import Image from "next/image";
 import styles from "./main.module.css";
 import { useEffect, useState } from "react";
+import Spinner from "./Spinner";
 
 export default function Main() {
+
 const [listProduct, setListProduct] = useState([]);
 
 useEffect( ()=>{
@@ -40,6 +42,10 @@ const orderMenosMais = () =>{
   );
   setListProduct(newList)
 };
+
+if(listProduct[0] == null){
+  return <Spinner/>
+}
 
   return (
     <>
