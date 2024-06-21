@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Styles from "./main.module.css"
 
 export default async function Header() {
