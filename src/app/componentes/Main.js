@@ -3,20 +3,26 @@ import Image from "next/image";
 import styles from "./main.module.css";
 import { useEffect, useState } from "react";
 import Spinner from "./Spinner";
-
+import ErrorGetData from "./ErrorGetData";
+import Link from "next/link";
 
 export default function Main() {
 
 const [listProduct, setListProduct] = useState([]);
 const [listcomplete, steListcomplete] = useState([]);
 const [search, setSearch] = useState ('');
+const [errorFetch, setErrorFetch] = useState(false);
 
 useEffect( ()=>{
   const getProduct = async ()=> {
+    try{
     const response = await fetch("https://fakestoreapi.com/products/");
     const data = await response.json();
     setListProduct(data);
     steListcomplete(data);
+    }catch{
+      setErrorFetch(true);
+    }
   }
   getProduct();
 }, []);
@@ -60,6 +66,10 @@ const SearchText = (text) => {
     setListProduct(newList);
 }
 
+if(errorFetch == true){
+  return <ErrorGetData/>
+}
+
 if(listProduct[0] == null){
   return <Spinner/>
 }
@@ -82,6 +92,7 @@ if(listProduct[0] == null){
                     <p className={styles.price}>R$: {product.price}</p>
                     <p className={styles.description}>{product.description}</p>
                     <button className={styles.button}>adicionar no Carrinho</button>
+                    <Link className={styles.button} href={`/produto/${product.id}`}>veja mais</Link>
                     <br/>
           </div>  ))} 
             

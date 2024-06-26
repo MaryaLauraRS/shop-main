@@ -1,0 +1,33 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color: #ff69b4;
+    border-radius: 10px;
+    align-items: center;
+    width: 500px;
+    margin: 10px; 
+}
+.title{
+    font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+}
+.image{
+    margin-bottom: 16px;
+}
+.price{
+    font-size: 20px;
+}
+
+.description{
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+}
+
+.button{
+    background: #009929;
+    font-size: 15px;
+    margin-top: 10px;
+    padding: 10px 20px;
+}
